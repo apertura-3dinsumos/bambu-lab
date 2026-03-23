@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Insumos × Bambu Lab — Apertura Buenos Aires</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=12">
+
+
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logos">
+            <span class="nav-logo-text">Bambu Lab&nbsp;&times;&nbsp;3D Insumos</span>
+        </div>
+        <div class="nav-right">
+            <div class="nav-dot"></div>
+            <span class="nav-badge">Authorized Retail Store</span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="hero-bg"
+            style="background-image: linear-gradient(to right, rgba(0,0,0,0.95) 30%, rgba(0,0,0,0.4) 100%), linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%), url('img/INICIO 1.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <div class="hero-grid"></div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="hero-eyebrow-line"></div>
+                <span class="hero-eyebrow-text">Primera tienda oficial en Argentina</span>
+            </div>
+            <h1 class="hero-title">
+                <div class="tl"><span>Bambu Lab</span></div>
+                <div class="tl"><span>Buenos Aires.</span></div>
+            </h1>
+            <p class="hero-subtitle">Dos pisos. Las mejores impresoras 3D del&nbsp;mundo. En persona, por primera vez
+                en&nbsp;Argentina.</p>
+            <div class="hero-cta-row">
+                <div class="hero-date-badge">
+                    <span class="date-num">28.03</span>
+                    <div class="date-info">Apertura al público<br>Entrada libre</div>
+                </div>
+                <div class="hero-date-badge" style="padding:18px 28px;gap:14px;">
+                    <span style="font-size:28px;line-height:1;">📍</span>
+                    <div class="date-info" style="font-size:13px;line-height:1.6;">Av. Francisco Beiró 5785<br>Villa
+                        Real · CABA · CP 1419</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="hero-countdown">
+            <div class="countdown-label-top">Faltan</div>
+            <div class="countdown-nums">
+                <div class="cd-item">
+                    <div class="cd-num" id="cd-days">--</div>
+                    <div class="cd-unit">Días</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-item">
+                    <div class="cd-num" id="cd-hours">--</div>
+                    <div class="cd-unit">Hs</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-item">
+                    <div class="cd-num" id="cd-mins">--</div>
+                    <div class="cd-unit">Min</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-item">
+                    <div class="cd-num" id="cd-secs">--</div>
+                    <div class="cd-unit">Seg</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER PASS -->
+    <section id="founder-pass" class="founder-section">
+
+        <!-- IMAGEN IZQUIERDA -->
+        <div class="founder-img-col">
+            <img src="img/300 PASES - 2.jpg" alt="Founder Pass" class="founder-photo">
+            <div class="founder-img-overlay"></div>
+            <div class="founder-img-fade"></div>
+        </div>
+
+        <!-- CONTENIDO DERECHO -->
+        <div class="founder-content">
+            <!-- Label -->
+            <div class="founder-label-row">
+                <div class="founder-label-line"></div>
+                <span class="founder-label-text">Founder Pass</span>
+            </div>
+
+            <!-- Número grande + etiqueta -->
+            <div class="founder-num-row">
+                <div class="founder-big-num">300</div>
+                <div class="founder-num-labels">
+                    <span>PASES</span>
+                    <span>EXCLUSIVOS</span>
+                </div>
+            </div>
+
+            <!-- Barra progreso -->
+            <div class="founder-progress">
+                <div class="founder-progress-bar" id="progressBar"></div>
+                <div class="founder-progress-header">
+                    <span>Ya registrados</span>
+                    <span id="progressCount">0/300</span>
+                </div>
+            </div>
+
+            <!-- Texto + botón en fila -->
+            <div class="founder-bottom">
+                <p class="founder-desc">
+                    Solo los primeros 300 visitantes del 28 de marzo reciben su Founder Pass de apertura. Objeto físico,
+                    edición única.
+                </p>
+                <a href="#registro" class="founder-btn" id="founderBtn">
+                    <span class="founder-btn-dot"></span>
+                    Anotate antes de que se agoten
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FORM -->
+    <section class="form-section" id="registro">
+        <div class="form-layout">
+            <div class="form-inner">
+                <h2 class="form-title" style="margin-bottom:24px;line-height:1.3;">Agendar<br><span>cita.</span></h2>
+
+                <p class="form-subtitle">Agendá tu visita. Vení a ver y probar las Bambu Lab en persona.</p>
+                <form id="mainForm">
+                    <div class="form-group"><label>Nombre y apellido *</label><input type="text" name="nombre"
+                            placeholder="Tu nombre completo" required></div>
+                    <div class="form-group"><label>Email *</label><input type="email" name="email"
+                            placeholder="tu@email.com" required></div>
+                    <div class="form-group"><label>Teléfono</label><input type="tel" name="telefono"
+                            placeholder="+54 11 ····-····"></div>
+                    <div class="form-checks">
+                        <label class="check-item"><input type="checkbox" name="novedades" checked><span>Acepto recibir
+                                novedades de Bambu Lab x 3D Insumos</span></label>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text">Agendar mi turno →</span>
+                        <div class="btn-spinner"></div>
+                    </button>
+                    <p id="formError"
+                        style="display:none;color:#ff6b6b;font-size:13px;margin-top:12px;padding:12px 16px;background:rgba(255,107,107,0.1);border-radius:8px;border:1px solid rgba(255,107,107,0.3);">
+                    </p>
+                    <p class="form-disclaimer">Al registrarte aceptás recibir comunicaciones de 3D Insumos y Bambu Lab
+                        Argentina. Podés darte de baja en cualquier momento.</p>
+                </form>
+            </div>
+            <aside class="form-aside">
+                <div class="section-label">
+                    <div class="section-label-line"></div><span class="section-label-text">Cómo llegar</span>
+                </div>
+                <h2 class="local-info-title">El local</h2>
+                <div class="local-detail">
+                    <div class="local-detail-item">
+                        <div class="local-detail-icon">📍</div>
+                        <div class="local-detail-info"><strong>Dirección</strong><span>Av. Francisco Beiró 5785, Villa
+                                Real, CABA, CP 1419</span></div>
+                    </div>
+                    <div class="local-detail-item">
+                        <div class="local-detail-icon">🕙</div>
+                        <div class="local-detail-info"><strong>Horario de apertura</strong><span>28 de marzo · [Horario]
+                                · Entrada libre y gratuita</span></div>
+                    </div>
+                    <div class="local-detail-item">
+                        <div class="local-detail-icon">🏢</div>
+                        <div class="local-detail-info"><strong>El espacio</strong><span>Dos pisos · Showroom completo ·
+                                Productos disponibles para ver, probar y comprar</span></div>
+                    </div>
+                </div>
+                <div class="map-placeholder" style="padding:0; overflow:hidden;">
+                    <iframe
+                        src="https://maps.google.com/maps?q=-34.61749912465096, -58.530168067538725&z=17&output=embed"
+                        width="100%" height="100%" style="border:0; min-height:200px; display:block;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Av. Francisco Beiró 5785 – Villa Real, CABA">
+                    </iframe>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="catalog-section">
+        <div class="catalog-inner">
+            <div class="section-label">
+                <div class="section-label-line"></div><span class="section-label-text">Lo que vas a encontrar</span>
+            </div>
+            <h2 class="catalog-title">Productos disponibles el día de apertura</h2>
+            <div class="catalog-grid">
+                <div class="catalog-card catalog-card--img">
+                    <img src="img/3-08.jpg" alt="Impresoras" class="catalog-card-img">
+                    <div class="catalog-card-label">Impresoras</div>
+                </div>
+                <div class="catalog-card catalog-card--img">
+                    <img src="img/3-07.jpg" alt="Filamentos" class="catalog-card-img">
+                    <div class="catalog-card-label">Filamentos</div>
+                </div>
+                <div class="catalog-card catalog-card--img">
+                    <img src="img/3-09.jpg" alt="Repuestos" class="catalog-card-img">
+                    <div class="catalog-card-label">Repuestos</div>
+                </div>
+                <div class="catalog-card catalog-card--img">
+                    <img src="img/3-10.jpg" alt="Kit Mystery Box DIY" class="catalog-card-img">
+                    <div class="catalog-card-label">Kit Mystery Box&nbsp;DIY</div>
+                </div>
+            </div>
+            <a href="https://3dinsumos.com.ar/Resultado/Bambu%20Lab" target="_blank" class="catalog-cta">Ver catálogo
+                completo →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-socials">
+                <!-- Instagram -->
+                <a href="https://instagram.com/3dinsumos" target="_blank" class="footer-social-link"
+                    aria-label="Instagram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+                    </svg>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/3Dinsumos?locale=es_LA" target="_blank" class="footer-social-link"
+                    aria-label="Facebook">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:3dinsumos@gmail.com" class="footer-social-link" aria-label="Email">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <polyline points="2,4 12,13 22,4" />
+                    </svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5491162100470" target="_blank" class="footer-social-link" aria-label="WhatsApp">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-badge-right">
+                <div class="nav-dot"></div>
+                <span class="nav-badge">Authorized Retail Store</span>
+            </div>
+        </div>
+        <div class="footer-brand">
+            <span>Bambu Lab&nbsp;&times;&nbsp;3D Insumos</span>
+        </div>
+        <div class="footer-legal">© 2026 · Buenos Aires</div>
+    </footer>
+
+    <!-- OVERLAY -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">¡Listo!</h2>
+        <p class="success-sub">Revisá tu email — te mandamos la invitación. Confirmá tu asistencia desde ahí.</p>
+        <div class="success-date">28 · 03 · 2026 &nbsp;·&nbsp; Entrada libre</div>
+        <button id="btnCloseSuccess" class="success-close">Cerrar</button>
+    </div>
+
+    <script src="js/main.js?v=2"></script>
+</body>
+
+</html>
