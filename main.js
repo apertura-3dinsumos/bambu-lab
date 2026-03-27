@@ -28,18 +28,34 @@ const TOTAL_PASSES = 300;
 
 async function updateProgress() {
     try {
-        const res  = await fetch(APPS_SCRIPT_URL, { method: 'GET', mode: 'cors' });
+        const res = await fetch(APPS_SCRIPT_URL, { method: 'GET', mode: 'cors' });
         const data = await res.json();
         if (!data.success) return;
 
-        const count   = data.count  || 0;
-        const total   = data.total  || TOTAL_PASSES;
-        const pct     = Math.min((count / total) * 100, 100);
+        const count = data.count || 0;
+        const total = data.total || TOTAL_PASSES;
+        const pct = Math.min((count / total) * 100, 100);
 
-        const bar     = document.getElementById('progressBar');
-        const label   = document.getElementById('progressCount');
-        if (bar)   bar.style.width = pct + '%';
+        const bar = document.getElementById('progressBar');
+        const label = document.getElementById('progressCount');
+        if (bar) bar.style.width = pct + '%';
         if (label) label.textContent = count + '/' + total;
+
+        // ── Bloquear formulario si cupos agotados ──
+        if (count >= total) {
+            const btn = document.getElementById('submitBtn');
+            const errorEl = document.getElementById('formError');
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Cupos agotados';
+                btn.style.opacity = '0.5';
+                btn.style.cursor = 'not-allowed';
+            }
+            if (errorEl) {
+                errorEl.textContent = '⚠️ Los 300 cupos ya están ocupados. ¡Gracias por tu interés!';
+                errorEl.style.display = 'block';
+            }
+        }
 
     } catch (e) {
         // Silencioso si falla (no bloquea nada)
@@ -51,27 +67,46 @@ updateProgress();
 
 document.getElementById('mainForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const btn     = document.getElementById('submitBtn');
-    const form    = e.target;
+    const btn = document.getElementById('submitBtn');
+    const form = e.target;
     const errorEl = document.getElementById('formError');
 
     if (errorEl) errorEl.style.display = 'none';
     btn.classList.add('loading');
     btn.disabled = true;
 
+    // ── Verificar cupo antes de enviar ──────────────────────
+    try {
+        const check = await fetch(APPS_SCRIPT_URL, { method: 'GET', mode: 'cors' });
+        const status = await check.json();
+        if (status.success && status.count >= status.total) {
+            if (errorEl) {
+                errorEl.textContent = '⚠️ Los 300 cupos ya están ocupados. ¡Gracias por tu interés!';
+                errorEl.style.display = 'block';
+            }
+            btn.classList.remove('loading');
+            btn.disabled = true;
+            btn.textContent = 'Cupos agotados';
+            btn.style.opacity = '0.5';
+            btn.style.cursor = 'not-allowed';
+            return;
+        }
+    } catch (_) { /* si falla el check, dejamos continuar */ }
+    // ────────────────────────────────────────────────────────
+
     const payload = {
-        nombre:    form.nombre.value.trim(),
-        email:     form.email.value.trim(),
-        telefono:  form.telefono.value.trim(),
+        nombre: form.nombre.value.trim(),
+        email: form.email.value.trim(),
+        telefono: form.telefono.value.trim(),
         novedades: form.novedades.checked,
     };
 
     try {
         await fetch(APPS_SCRIPT_URL, {
-            method:  'POST',
-            mode:    'no-cors',
+            method: 'POST',
+            mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain' },
-            body:    JSON.stringify(payload),
+            body: JSON.stringify(payload),
         });
 
         form.reset();
@@ -86,7 +121,7 @@ document.getElementById('mainForm').addEventListener('submit', async function (e
         }
     } finally {
         btn.classList.remove('loading');
-        btn.disabled = false;
+        if (!btn.textContent.includes('agotados')) btn.disabled = false;
     }
 });
 
